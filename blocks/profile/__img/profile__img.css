@@ -1,0 +1,9 @@
+.profile__img {
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 900px) {
+    .profile__img {
+        margin: 0 auto;
+    }
+}

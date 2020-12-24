@@ -1,0 +1,22 @@
+.edit__save-button {
+    color: #fff;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    background: #000000;
+    border-radius: 2px;
+    width: 358px;
+    min-height: 46px;
+    max-height: 50px;
+}
+
+.edit__save-button:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 440px) {
+    .edit__save-button {
+        min-width: 238px;
+        width: auto;
+    }
+}

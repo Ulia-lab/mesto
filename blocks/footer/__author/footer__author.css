@@ -1,0 +1,13 @@
+.footer__author {
+    font-size: 18px;
+    line-height: 22px;
+    color: #545454;
+    margin: 0;
+    padding-bottom: 60px;
+}
+
+@media screen and (max-width: 900px) {
+    .footer__author {
+        padding-bottom: 36px;
+    }
+}

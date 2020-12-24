@@ -1,0 +1,9 @@
+.card__like-button {
+    align-self: center;
+    justify-self: center;
+    height: 18.13px;
+}
+
+.card__like-button:hover {
+    opacity: 0.5;
+} 

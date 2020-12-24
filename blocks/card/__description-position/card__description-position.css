@@ -1,0 +1,8 @@
+.card__description-position {
+    display: flex;
+    justify-content: space-between;
+    margin: 22px 15px 31px 21px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

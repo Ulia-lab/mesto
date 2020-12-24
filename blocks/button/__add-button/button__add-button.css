@@ -1,4 +1,4 @@
-.button__add-button {
+.button__add {
     align-self: center;
     justify-self: center;
     width: 150px;
@@ -8,12 +8,12 @@
     border-radius: 2px;
 }
 
-.button__add-button:hover {
+.button__add:hover {
     opacity: 0.6;
 }
 
 @media screen and (max-width: 900px) {
-    .button__add-button {
+    .button__add {
         width: 282px;
     }
 }

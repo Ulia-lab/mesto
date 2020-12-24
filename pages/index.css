@@ -29,7 +29,7 @@
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__author/footer__author.css);
 
-@import url(../blocks/edit/__overlay/edit__overlay.css);
+@import url(../blocks/edit/edit.css);
 @import url(../blocks/edit/__close-button/edit__close-button.css);
 @import url(../blocks/edit/__input-text/edit__input-text.css);
 @import url(../blocks/edit/__popup/edit__popup.css);

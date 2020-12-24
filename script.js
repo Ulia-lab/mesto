@@ -1,6 +1,6 @@
 let page = document.querySelector('.page');
 let editButton = page.querySelector('.button__edit-button');
-let editPopup = page.querySelector('.edit__overlay');
+let editPopup = page.querySelector('.edit');
 let closeButton = page.querySelector('.button__close-button');
 let input = page.querySelector('.edit__input');
 let saveButton = page.querySelector('.edit__save-button');

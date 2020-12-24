@@ -1,8 +1,8 @@
-.button__edit {
+.button_edit {
     align-self: center;
     justify-self: center;
 }
 
-.button__edit:hover {
+.button_edit:hover {
     opacity: 0.6;
 }

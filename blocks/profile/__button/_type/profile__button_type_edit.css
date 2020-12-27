@@ -1,6 +1,7 @@
 .profile__button_type_edit {
     align-self: center;
     justify-self: center;
+    transition: 0.5s linear;
 }
 
 .profile__button_type_edit:hover {

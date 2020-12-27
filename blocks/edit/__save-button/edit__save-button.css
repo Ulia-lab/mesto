@@ -8,7 +8,7 @@
     width: 358px;
     min-height: 46px;
     max-height: 50px;
-    
+    transition: 0.5s linear;
 }
 
 .edit__save-button:hover {

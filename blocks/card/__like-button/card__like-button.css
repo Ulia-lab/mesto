@@ -1,4 +1,9 @@
 .card__like-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
     align-self: center;
     justify-self: center;
     height: 18.13px;

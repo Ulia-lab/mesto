@@ -10,18 +10,17 @@
     <div class='page'>
         <header class='header'>
             <img class='header__logo' src='./images/Logo.svg' alt="изображение">
-            <img class='header__line' src="./images/Line.svg" alt="изображение">
         </header>
         <main>
             <section class='profile'>
             <img class='profile__img' src="./images/profile-photo.svg" alt="изображение">
                 <div class='profile__info'>
-                    <h2 class='profile__name'>Жак-Ив Кусто</h2>
-                    <button class='button button_edit' type='button'>
+                    <h1 class='profile__name'>Жак-Ив Кусто</h1>
+                    <button class='profile__button profile__button_type_edit' type='button'>
                         <img class='profile__edit-button' src="./images/Edit-Button.svg" alt='изображение'></button>
                     <p class='profile__description'>Исследователь океана</p>
                 </div>
-                <button class='button button_add' type='button'>
+                <button class='profile__button profile__button_type_add' type='button'>
                     <img class='profile__add-button' src="./images/Add-Button.svg" alt="изображение">
                 </button>
             </section>
@@ -30,39 +29,55 @@
                     <img class='card__img' src="./images/photo/fachry-zella-devandra-YdzcMoLuwZY-unsplash-min.jpg" alt="изображение">
                     <div class='card__description-position'>
                         <h3 class='card__name'>Карачаевск</h3>
-                        <button class='button card__like-button' id='1'> 
+                        <button class='card__like-button' id='1'> 
                             <img src="./images/like.svg" alt='изображение'>
                         </button>
                     </div> 
                 </div>
                 <div class='card'>
                     <img class='card__img' src="./images/photo/harsh-gupta-1LHDZjtDhCY-unsplash-min.jpg" alt="изображение">
-                    <div class='card__description-position'><h3 class='card__name'>Гора Эльбрус</h3>
-                        <button class='button card__like-button' id='2'> 
+                    <div class='card__description-position'>
+                        <h3 class='card__name'>Гора Эльбрус</h3>
+                        <button class='card__like-button' id='2'> 
                             <img src="./images/like.svg" alt="изображение">
                         </button>
                     </div> 
                 </div>
                 <div class='card'>
                     <img class='card__img' src="./images/photo/puria-berenji-fcrVRva60Ko-unsplash-min.jpg" alt="изображение">
-                    <div class='card__description-position'><h3 class='card__name'>Домбай</h3>
-                    <button class='button card__like-button'> <img src="./images/like.svg" alt="изображение"></button></div> 
+                    <div class='card__description-position'>
+                        <h3 class='card__name'>Домбай</h3>
+                        <button class='card__like-button'>
+                            <img src="./images/like.svg" alt="изображение">
+                        </button>
+                    </div> 
                 </div>
                 <div class='card'>
                     <img class='card__img' src="./images/photo/mehmet-turgut-kirkgoz-Sv2JiMC85Gk-unsplash-min.jpg" alt="изображение">
-                    <div class='card__description-position'><h3 class='card__name'>Гора Эльбрус</h3>
-                    <button class='button card__like-button'> <img src="./images/like.svg" alt="изображение">
-                    </button></div> 
+                    <div class='card__description-position'>
+                        <h3 class='card__name'>Гора Эльбрус</h3>
+                        <button class='card__like-button'>
+                            <img src="./images/like.svg" alt="изображение">
+                        </button>
+                    </div> 
                 </div>
                 <div class='card'>
                     <img class='card__img' src="./images/photo/francesco-ungaro-3_bh5eRJchk-unsplash-min.jpg" alt="изображение">
-                    <div class='card__description-position'><h3 class='card__name'>Домбай</h3>
-                    <button class='button card__like-button'> <img src="./images/like.svg" alt="изображение"></button></div> 
+                    <div class='card__description-position'>
+                        <h3 class='card__name'>Домбай</h3>
+                        <button class='card__like-button'>
+                            <img src="./images/like.svg" alt="изображение">
+                        </button>
+                    </div> 
                 </div>
                 <div class='card'>
                     <img class='card__img' src="./images/photo/brandon-usmany-olvimDObfGY-unsplash-min.jpg" alt="изображение">
-                    <div class='card__description-position'><h3 class='card__name'>Карачаево-Черкесия</h3>
-                    <button class='button card__like-button'> <img src="./images/like.svg" alt="изображение"></button></div> 
+                    <div class='card__description-position'>
+                        <h3 class='card__name'>Карачаево-Черкесия</h3>
+                        <button class='card__like-button'>
+                            <img src="./images/like.svg" alt="изображение">
+                        </button>
+                    </div> 
                 </div>
             </section>
         </main>
@@ -71,15 +86,18 @@
         </footer>
         <section class='edit'>
             <div class='edit__popup'>
-                <button class='button button_close'>
+                <button class='edit__button edit__button_type_close'>
                     <img class='edit__close-button' src="./images/Close-Icon.svg" alt='изображение'>
                     </button>
-                    <h3 class='edit__title'>Редактировать профиль</h3>
-                    <div class='edit__input'></div>
-                    <button class='button edit__save-button' type="submit">Сохранить</button>
+                    <h2 class='edit__title'>Редактировать профиль</h2>
+                    <form name='form-edit' class='edit__input'>
+                        <input class='edit__input_text_name' type="text" placeholder='Имя' required value=''>
+                        <input class='edit__input_text_description' type="text"  placeholder="О себе" required value=''>
+                        <button class='button edit__save-button' type="submit">Сохранить</button>
+                    </form>
             </div>
         </section>
-        <script src="./scripts/script.js"></script>
     </div>
+    <script src="./scripts/script.js"></script>
 </body>
 </html>

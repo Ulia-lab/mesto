@@ -1,4 +1,4 @@
-.edit__input-text {
+.edit__input_text_description {
     font-size: 14px;
     line-height: 17px;
     margin-bottom: 30px;
@@ -11,10 +11,10 @@
     background-color: transparent;
 }
 
-.edit__input-text:last-child {
+.edit__input_text_description:last-child {
     margin-bottom: 48px;
 }
 
-.edit__input-text:focus {
+.edit__input_text_description:focus {
     outline: none;
 }

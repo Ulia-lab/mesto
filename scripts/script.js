@@ -1,51 +1,33 @@
 let page = document.querySelector('.page');
-let editButton = page.querySelector('.button_edit');
+let editButton = page.querySelector('.profile__button_type_edit');
 let editPopup = page.querySelector('.edit');
-let closeButton = page.querySelector('.button_close');
-let input = page.querySelector('.edit__input');
+let closeButton = page.querySelector('.edit__button_type_close');
+let formElement = document.querySelector('.edit__input');
 let saveButton = page.querySelector('.edit__save-button');
-let likeButton = page.querySelector('.card__like-button');
+let nameProfile = page.querySelector('.profile__name');
+let description = page.querySelector('.profile__description');
+let inputName = page.querySelector('.edit__input_text_name');
+let inputDescription = page.querySelector('.edit__input_text_description');
 
-function addPlaceholder() {
-    let name = page.querySelector('.profile__name');
-    let description = page.querySelector('.profile__description');
-
-    input.innerHTML = `
-    <input class='edit__input-text' type="text" name="profileName" placeholder='Имя' required value="${name.textContent}">
-    <input class='edit__input-text' type="text" name='profileDescription' placeholder="О себе" required value="${description.textContent}">
-    `
-}
-
-function saveButtons () {
-
-    let name = page.querySelector('.profile__name');
-    let description = page.querySelector('.profile__description');
-
-    let inputName = page.querySelectorAll('.edit__input-text');
-
-    name.textContent = inputName[0].value;
-    description.textContent = inputName[1].value;
-}
-
-function likeActive () {
-
-    likeButton.innerHTML = `<img src="./images/like-active.svg" alt="изображение">`;
-}
-
-likeButton.addEventListener('click', ()=> {
-    likeActive();
-});
-
-editButton.addEventListener('click', ()=> {
-    addPlaceholder();
+function openPopup() {
+    inputName.value = nameProfile.textContent;
+    inputDescription.value = description.textContent;
     editPopup.classList.add('edit_active');
-});
+}
 
-saveButton.addEventListener('click', ()=> {
-    saveButtons();
+function handleFormSubmit (evt) {
+    evt.preventDefault();
+    nameProfile.textContent = inputName.value;
+    description.textContent = inputDescription.value;
     editPopup.classList.remove('edit_active'); 
-});
+}
 
-closeButton.addEventListener('click', ()=> {
-    editPopup.classList.remove('edit_active'); 
-});
+function closePopup() {
+    editPopup.classList.remove('edit_active');
+}
+
+editButton.addEventListener('click', openPopup);
+
+formElement.addEventListener('submit', handleFormSubmit);  
+
+closeButton.addEventListener('click', closePopup); 

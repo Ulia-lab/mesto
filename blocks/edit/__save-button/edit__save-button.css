@@ -8,6 +8,7 @@
     width: 358px;
     min-height: 46px;
     max-height: 50px;
+    
 }
 
 .edit__save-button:hover {
@@ -18,5 +19,7 @@
     .edit__save-button {
         min-width: 238px;
         width: auto;
+        font-size: 14px;
+        line-height: 17px;
     }
 }

@@ -1,7 +1,7 @@
 .edit__input_text_description {
     font-size: 14px;
     line-height: 17px;
-    margin-bottom: 30px;
+    margin-bottom: 45px;
     font-family: inherit;
     border: 0;
     width: 100%;
@@ -9,10 +9,6 @@
     box-sizing: border-box;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     background-color: transparent;
-}
-
-.edit__input_text_description:last-child {
-    margin-bottom: 48px;
 }
 
 .edit__input_text_description:focus {

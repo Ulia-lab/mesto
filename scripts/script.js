@@ -3,7 +3,6 @@ let editButton = page.querySelector('.profile__button_type_edit');
 let editPopup = page.querySelector('.edit');
 let closeButton = page.querySelector('.edit__button_type_close');
 let formElement = document.querySelector('.edit__form');
-let saveButton = page.querySelector('.edit__save-button');
 let nameProfile = page.querySelector('.profile__name');
 let descriptionProfile = page.querySelector('.profile__description');
 let inputName = page.querySelector('.edit__input_text_name');

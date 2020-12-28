@@ -10,7 +10,6 @@
 
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
-@import url(../blocks/header/__line/header__line.css);
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__img/profile__img.css);
@@ -32,8 +31,7 @@
 
 @import url(../blocks/edit/edit.css);
 @import url(../blocks/edit/__close-button/edit__close-button.css);
-@import url(../blocks/edit/__input/_text/edit__input_text_description.css);
-@import url(../blocks/edit/__input/_text/edit__input_text_name.css);
+@import url(../blocks/edit/__input/edit__input.css);
 @import url(../blocks/edit/__popup/edit__popup.css);
 @import url(../blocks/edit/__save-button/edit__save-button.css);
 @import url(../blocks/edit/__title/edit__title.css);

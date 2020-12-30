@@ -3,7 +3,7 @@
     justify-self: center;
     display: grid;
     grid-template-columns: 1fr 24px;
-    grid-template-rows: 39px 20px;
+    grid-template-rows: 39px 23px;
     gap: 16px 18px;
     max-width: 472px;
     margin-right: 244px;

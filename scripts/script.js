@@ -1,7 +1,15 @@
 let page = document.querySelector('.page');
+
 let editButton = page.querySelector('.profile__button_type_edit');
-let editPopup = page.querySelector('.popup');
-let closeButton = page.querySelector('.popup__button_type_close');
+let editPopup = page.querySelector('.popup__edit');
+
+let addButton = page.querySelector('.profile__button_type_add');
+let addPopup = page.querySelector('.popup__add');
+
+
+let popup = page.querySelector('.popup');
+
+let closeButton = page.querySelectorAll('.popup__close-button');
 let formElement = document.querySelector('.popup__form');
 let nameProfile = page.querySelector('.profile__name');
 let descriptionProfile = page.querySelector('.profile__description');
@@ -34,25 +42,35 @@ const initialCards = [
     }
   ];
 
-function openPopup() {
-    inputName.value = nameProfile.textContent;
-    inputDescription.value = descriptionProfile.textContent;
-    editPopup.classList.add('popup_active');
+function openPopup(popupType) {
+  switch (popupType.target.className) {
+    case 'profile__edit-button':
+      inputName.value = nameProfile.textContent;
+      inputDescription.value = descriptionProfile.textContent;
+      editPopup.classList.add('popup_active');
+      break;
+    case 'profile__add-button':
+      addPopup.classList.add('popup_active');
+      break;
+  }
 }
 
 function handleFormSubmit (evt) {
     evt.preventDefault();
     nameProfile.textContent = inputName.value;
     descriptionProfile.textContent = inputDescription.value;
-    editPopup.classList.remove('popup_active'); 
+    popup.classList.remove('popup_active'); 
 }
 
 function closePopup() {
     editPopup.classList.remove('popup_active');
+    addPopup.classList.remove('popup_active');
 }
 
 editButton.addEventListener('click', openPopup);
+addButton.addEventListener('click', openPopup);
 
 formElement.addEventListener('submit', handleFormSubmit);  
 
-closeButton.addEventListener('click', closePopup); 
+closeButton[0].addEventListener('click', closePopup); 
+closeButton[1].addEventListener('click', closePopup); 

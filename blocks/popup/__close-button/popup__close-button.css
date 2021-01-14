@@ -1,10 +1,10 @@
-.edit__close-button {
+.popup__close-button {
     width: 57px;
     height: 57px;
 }
 
 @media screen and (max-width: 540px) {
-    .edit__close-button {
+    .popup__close-button {
         width: 40px;
         height: 40px;
     }

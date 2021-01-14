@@ -1,4 +1,4 @@
-.edit__input {
+.popup__input {
     font-size: 14px;
     line-height: 17px;
     margin-bottom: 30px;
@@ -11,10 +11,10 @@
     background-color: transparent;
 }
 
-.edit__input:last-child {
+.popup__input:last-child {
     margin-bottom: 48px;
 }
 
-.edit__input:focus {
+.popup__input:focus {
     outline: none;
 }

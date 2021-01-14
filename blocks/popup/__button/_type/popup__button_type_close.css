@@ -1,4 +1,4 @@
-.edit__button_type_close {
+.popup__button_type_close {
     position: absolute;
     top: -45px;
     right: -30px;
@@ -7,12 +7,12 @@
     transition: 0.5s linear;
 }
 
-.edit__button_type_close:hover {
+.popup__button_type_close:hover {
     opacity: 0.6;
 }
 
 @media screen and (max-width: 500px) {
-    .edit__button_type_close {
+    .popup__button_type_close {
         right: 0px;    
     }
 }

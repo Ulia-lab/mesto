@@ -84,16 +84,29 @@
         <footer class='footer'>
             <p class='footer__author'>&copy;2020 Mesto Russia</p>
         </footer>
-        <section class='edit'>
-            <div class='edit__popup'>
-                <button class='edit__button edit__button_type_close' type='button'>
-                    <img class='edit__close-button' src="./images/Close-Icon.svg" alt='изображение'>
+        <section class='popup popup__edit'>
+            <div class='popup__container'>
+                <button class='popup__button popup__button_type_close' type='button'>
+                    <img class='popup__close-button' src="./images/Close-Icon.svg" alt='изображение'>
                     </button>
-                    <h2 class='edit__title'>Редактировать профиль</h2>
-                    <form name='form-edit' class='edit__form'>
-                        <input class='edit__input edit__input_text_name' type="text" placeholder='Имя' required value=''>
-                        <input class='edit__input edit__input_text_description' type="text"  placeholder="О себе" required value=''>
-                        <button class='button edit__save-button' type="submit">Сохранить</button>
+                    <h2 class='popup__title'>Редактировать профиль</h2>
+                    <form name='form-edit' class='popup__form'>
+                        <input class='popup__input popup__input_text_name' type="text" placeholder='Имя' required value=''>
+                        <input class='popup__input popup__input_text_description' type="text"  placeholder="О себе" required value=''>
+                        <button class='button popup__save-button' type="submit">Сохранить</button>
+                    </form>
+            </div>
+        </section>
+        <section class='popup popup__add'>
+            <div class='popup__container'>
+                <button class='popup__button popup__button_type_close' type='button'>
+                    <img class='popup__close-button' src="./images/Close-Icon.svg" alt='изображение'>
+                    </button>
+                    <h2 class='popup__title'>Новое место</h2>
+                    <form name='form-edit' class='popup__form'>
+                        <input class='popup__input popup__input_text_name' type="text" placeholder='Название' required value=''>
+                        <input class='popup__input popup__input_text_description' type="text"  placeholder="Ссылка на картинку" required value=''>
+                        <button class='button popup__save-button' type="submit">Сохранить</button>
                     </form>
             </div>
         </section>

@@ -5,8 +5,9 @@
     max-width: 880px;
     margin: 0 auto;
     gap: 20px 17px;
-    list-style-type:none;
+    list-style:none;
     padding: 0;
+    border: 0;
 }
 
 @media screen and (max-width: 900px) {

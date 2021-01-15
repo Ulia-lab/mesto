@@ -26,27 +26,27 @@ const cardPlace = document.querySelector('.places');
 const initialCards = [
     {
       name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+      link: './images/photo/fachry-zella-devandra-YdzcMoLuwZY-unsplash-min.jpg'
     },
     {
       name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+      link: './images/photo/harsh-gupta-1LHDZjtDhCY-unsplash-min.jpg'
     },
     {
       name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+      link: './images/photo/puria-berenji-fcrVRva60Ko-unsplash-min.jpg'
     },
     {
       name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+      link: './images/photo/mehmet-turgut-kirkgoz-Sv2JiMC85Gk-unsplash-min.jpg'
     },
     {
       name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+      link: './images/photo/francesco-ungaro-3_bh5eRJchk-unsplash-min.jpg'
     },
     {
       name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+      link: './images/photo/brandon-usmany-olvimDObfGY-unsplash-min.jpg'
     }
   ];
 //cards

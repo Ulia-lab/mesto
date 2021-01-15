@@ -1,20 +1,28 @@
 let page = document.querySelector('.page');
+let popup = page.querySelector('.popup');
 
+//edit button
 let editButton = page.querySelector('.profile__button_type_edit');
 let editPopup = page.querySelector('.popup__edit');
 
+//add button
 let addButton = page.querySelector('.profile__button_type_add');
 let addPopup = page.querySelector('.popup__add');
 
-
-let popup = page.querySelector('.popup');
-
+//close button
 let closeButton = page.querySelectorAll('.popup__close-button');
+
+//form elements
 let formElement = document.querySelector('.popup__form');
 let nameProfile = page.querySelector('.profile__name');
 let descriptionProfile = page.querySelector('.profile__description');
 let inputName = page.querySelector('.popup__input_text_name');
 let inputDescription = page.querySelector('.popup__input_text_description');
+
+//adding card
+const cardTemplate = document.querySelector(".card_template").content;
+const cardPlace = document.querySelector('.places');
+
 const initialCards = [
     {
       name: 'Архыз',
@@ -41,7 +49,22 @@ const initialCards = [
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
   ];
+//cards
+function render() {
+  initialCards.forEach(function (element) {
+  const newCard = cardTemplate.cloneNode(true);
 
+  newCard.querySelector('.card__img').src = element.link;
+  newCard.querySelector('.card__name').innerText = element.name;
+
+  cardPlace.append(newCard);
+  });
+}
+
+render();
+
+
+// buttons  
 function openPopup(popupType) {
   switch (popupType.target.className) {
     case 'profile__edit-button':
@@ -73,4 +96,4 @@ addButton.addEventListener('click', openPopup);
 formElement.addEventListener('submit', handleFormSubmit);  
 
 closeButton[0].addEventListener('click', closePopup); 
-closeButton[1].addEventListener('click', closePopup); 
+closeButton[1].addEventListener('click', closePopup);

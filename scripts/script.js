@@ -13,7 +13,7 @@ let addPopup = page.querySelector('.popup__add');
 let closeButton = page.querySelectorAll('.popup__close-button');
 
 //form elements
-let formElement = document.querySelector('.popup__form');
+let formElement = document.querySelectorAll('.popup__form');
 let nameProfile = page.querySelector('.profile__name');
 let descriptionProfile = page.querySelector('.profile__description');
 let inputName = page.querySelector('.popup__input_text_name');
@@ -51,20 +51,36 @@ const initialCards = [
   ];
 //cards
 function render() {
-  initialCards.forEach(function (element) {
+  initialCards.forEach(renderCard);
+}
+  
+function renderCard (element) {
   const newCard = cardTemplate.cloneNode(true);
 
   newCard.querySelector('.card__img').src = element.link;
   newCard.querySelector('.card__name').innerText = element.name;
 
-  cardPlace.append(newCard);
-  });
+  cardPlace.prepend(newCard);
 }
 
-render();
+function handleAddCards(evt) {
+  evt.preventDefault();
+  const newForm = new Object();
+  
+  const inputCardName = page.querySelector('.popup__input_card_name');
+  const inputCardDescription = page.querySelector('.popup__input_card_description');
 
+  newForm.name = inputCardName.value;
+  newForm.link= inputCardDescription.value;
+  
+  //initialCards.unshift(newForm);
 
-// buttons  
+  renderCard (newForm);
+  const addPopup = page.querySelector('.popup__add');
+  addPopup.classList.remove('popup_active'); 
+}
+
+// popup  
 function openPopup(popupType) {
   switch (popupType.target.className) {
     case 'profile__edit-button':
@@ -81,10 +97,12 @@ function openPopup(popupType) {
 function handleFormSubmit (evt) {
     evt.preventDefault();
     nameProfile.textContent = inputName.value;
+    console.log(inputName.value);
     descriptionProfile.textContent = inputDescription.value;
     popup.classList.remove('popup_active'); 
 }
 
+// close
 function closePopup() {
     editPopup.classList.remove('popup_active');
     addPopup.classList.remove('popup_active');
@@ -93,7 +111,10 @@ function closePopup() {
 editButton.addEventListener('click', openPopup);
 addButton.addEventListener('click', openPopup);
 
-formElement.addEventListener('submit', handleFormSubmit);  
+formElement[0].addEventListener('submit', handleFormSubmit); 
+formElement[1].addEventListener('submit', handleAddCards);  
 
 closeButton[0].addEventListener('click', closePopup); 
 closeButton[1].addEventListener('click', closePopup);
+
+render();

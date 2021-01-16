@@ -22,6 +22,9 @@ let inputDescription = page.querySelector('.popup__input_text_description');
 //adding card
 const cardTemplate = document.querySelector(".card_template").content;
 const cardPlace = document.querySelector('.places');
+const inputCardName = page.querySelector('.popup__input_card_name');
+const inputCardDescription = page.querySelector('.popup__input_card_description');
+const cardRemove = document.querySelectorAll('.card__remove-button');
 
 const initialCards = [
     {
@@ -66,18 +69,23 @@ function renderCard (element) {
 function handleAddCards(evt) {
   evt.preventDefault();
   const newForm = new Object();
-  
-  const inputCardName = page.querySelector('.popup__input_card_name');
-  const inputCardDescription = page.querySelector('.popup__input_card_description');
 
   newForm.name = inputCardName.value;
   newForm.link= inputCardDescription.value;
   
-  //initialCards.unshift(newForm);
-
   renderCard (newForm);
-  const addPopup = page.querySelector('.popup__add');
-  addPopup.classList.remove('popup_active'); 
+  resetInputValue();
+  closePopup();
+}
+
+function resetInputValue () {
+  inputCardName.value = "";
+  inputCardDescription.value = "";
+}
+
+// card delete
+function handleRemove(evt) {
+  evt.target.closest('.popup').remove();
 }
 
 // popup  
@@ -97,7 +105,6 @@ function openPopup(popupType) {
 function handleFormSubmit (evt) {
     evt.preventDefault();
     nameProfile.textContent = inputName.value;
-    console.log(inputName.value);
     descriptionProfile.textContent = inputDescription.value;
     popup.classList.remove('popup_active'); 
 }
@@ -108,6 +115,7 @@ function closePopup() {
     addPopup.classList.remove('popup_active');
 }
 
+//listeners
 editButton.addEventListener('click', openPopup);
 addButton.addEventListener('click', openPopup);
 
@@ -116,5 +124,7 @@ formElement[1].addEventListener('submit', handleAddCards);
 
 closeButton[0].addEventListener('click', closePopup); 
 closeButton[1].addEventListener('click', closePopup);
+
+cardRemove.addEventListener('click', handleRemove);
 
 render();

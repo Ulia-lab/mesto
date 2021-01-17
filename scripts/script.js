@@ -63,6 +63,7 @@ function renderCard (element) {
   newCard.querySelector('.card__img').src = element.link;
   newCard.querySelector('.card__name').innerText = element.name;
 
+  setListeners(newCard);
   cardPlace.prepend(newCard);
 }
 
@@ -78,6 +79,12 @@ function handleAddCards(evt) {
   closePopup();
 }
 
+function setListeners(element) {
+  element.querySelector('.card__remove-button').addEventListener('click', handleRemove);
+  console.log(handleRemove);
+}
+  
+
 function resetInputValue () {
   inputCardName.value = "";
   inputCardDescription.value = "";
@@ -85,7 +92,7 @@ function resetInputValue () {
 
 // card delete
 function handleRemove(evt) {
-  evt.target.closest('.popup').remove();
+  evt.target.closest('.card').remove();
 }
 
 // popup  
@@ -124,7 +131,5 @@ formElement[1].addEventListener('submit', handleAddCards);
 
 closeButton[0].addEventListener('click', closePopup); 
 closeButton[1].addEventListener('click', closePopup);
-
-cardRemove.addEventListener('click', handleRemove);
 
 render();

@@ -46,19 +46,28 @@
             <div class='popup__container'>
                 <button class='popup__button popup__button_type_close' type='button'>
                     <img class='popup__close-button' src="./images/Close-Icon.svg" alt='изображение'>
-                    </button>
-                    <h2 class='popup__title'>Новое место</h2>
-                    <form name='form-edit' class='popup__form'>
-                        <input class='popup__input popup__input_card_name' type="text" placeholder='Название' required value=''>
-                        <input class='popup__input popup__input_card_description' type="text"  placeholder="Ссылка на картинку" required value=''>
-                        <button class='button popup__save-button' type="submit">Сохранить</button>
-                    </form>
+                </button>
+                <h2 class='popup__title'>Новое место</h2>
+                <form name='form-edit' class='popup__form'>
+                    <input class='popup__input popup__input_card_name' type="text" placeholder='Название' required value=''>
+                    <input class='popup__input popup__input_card_description' type="text"  placeholder="Ссылка на картинку" required value=''>
+                    <button class='button popup__save-button' type="submit">Сохранить</button>
+                </form>
             </div>
         </section>
     </div>
+    <section class='img'>
+        <div class="img__position">
+            <button class='popup__button popup__button_type_close' type='button'>
+                <img class='img__close-button popup__close-button' src="./images/Close-Icon.svg" alt='изображение'>
+            </button>
+            <img class='img__full-size' src=''alt='изображение'>
+            <p class='img__text'></p>
+        </div>
+    </section>
     <template class="card_template">
         <li class='card'>
-            <img class='card__img' src='' alt="изображение">
+            <a href='#' class='img__open'><img class='card__img' src='' alt="изображение"></a>
             <button class='button card__remove-button' type='button'>
                 <img src="./images/Trash.svg" alt='изображение'>
             </button>

@@ -1,0 +1,8 @@
+.img__full-size {
+    height: 540px;
+    max-width: 75vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}

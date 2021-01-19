@@ -26,6 +26,9 @@ const inputCardName = page.querySelector('.popup__input_card_name');
 const inputCardDescription = page.querySelector('.popup__input_card_description');
 const cardRemove = document.querySelectorAll('.card__remove-button');
 
+//open img
+const newImg = document.querySelector('.img');
+
 const initialCards = [
     {
       name: 'Архыз',
@@ -52,11 +55,8 @@ const initialCards = [
       link: './images/photo/brandon-usmany-olvimDObfGY-unsplash-min.jpg'
     }
   ];
+
 //cards
-function render() {
-  initialCards.forEach(renderCard);
-}
-  
 function renderCard (element) {
   const newCard = cardTemplate.cloneNode(true);
 
@@ -81,13 +81,22 @@ function handleAddCards(evt) {
 
 function setListeners(element) {
   element.querySelector('.card__remove-button').addEventListener('click', handleRemove);
-  console.log(handleRemove);
+  element.querySelector('.img__open').addEventListener('click', openImage);
 }
   
-
 function resetInputValue () {
   inputCardName.value = "";
   inputCardDescription.value = "";
+}
+
+//open image
+function openImage(element) {
+  const closeCard = element.target.closest('.card');
+
+  newImg.querySelector('.img__full-size').src = closeCard.querySelector('.card__img').src;
+  newImg.querySelector('.img__text').textContent = closeCard.querySelector('.card__name').textContent;
+
+  newImg.classList.add('img_active');
 }
 
 // card delete
@@ -132,4 +141,8 @@ formElement[1].addEventListener('submit', handleAddCards);
 closeButton[0].addEventListener('click', closePopup); 
 closeButton[1].addEventListener('click', closePopup);
 
-render();
+document.querySelector('.img__close-button').addEventListener('click', function () {newImg.classList.remove('img_active')
+});
+
+initialCards.forEach(renderCard);
+

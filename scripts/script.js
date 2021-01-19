@@ -3,11 +3,11 @@ const popup = page.querySelector('.popup');
 
 //edit button
 const editButton = page.querySelector('.profile__button_type_edit');
-const editPopup = page.querySelector('.popup__edit');
+const editPopup = page.querySelector('.popup_type_edit');
 
 //add button
 const addButton = page.querySelector('.profile__button_type_add');
-const addPopup = page.querySelector('.popup__add');
+const addPopup = page.querySelector('.popup_type_add');
 
 //close button
 const closeButton = page.querySelectorAll('.popup__close-button');

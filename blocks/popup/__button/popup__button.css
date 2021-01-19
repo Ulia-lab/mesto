@@ -4,5 +4,21 @@
     padding: 0;
     outline: none;
     cursor: pointer;
+    position: absolute;
+    top: -45px;
+    right: -30px;
+    width: 40px;
+    height: 40px;
+    transition: 0.5s linear;
+}
+
+.popup__button:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 500px) {
+    .popup__button {
+        right: 0px;    
+    }
 }
 

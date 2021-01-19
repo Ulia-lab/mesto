@@ -24,80 +24,60 @@
                     <img class='profile__add-button' src="./images/Add-Button.svg" alt="изображение">
                 </button>
             </section>
-            <ul class='places'>
-                <li class='card'>
-                    <img class='card__img' src="./images/photo/fachry-zella-devandra-YdzcMoLuwZY-unsplash-min.jpg" alt="изображение">
-                    <div class='card__description-position'>
-                        <h3 class='card__name'>Карачаевск</h3>
-                        <button class='card__like-button' type='button' id='1'> 
-                            <img src="./images/like.svg" alt='изображение'>
-                        </button>
-                    </div> 
-                </li>
-                <li class='card'>
-                    <img class='card__img' src="./images/photo/harsh-gupta-1LHDZjtDhCY-unsplash-min.jpg" alt="изображение">
-                    <div class='card__description-position'>
-                        <h3 class='card__name'>Гора Эльбрус</h3>
-                        <button class='card__like-button' type='button' id='2'> 
-                            <img src="./images/like.svg" alt="изображение">
-                        </button>
-                    </div> 
-                </li>
-                <li class='card'>
-                    <img class='card__img' src="./images/photo/puria-berenji-fcrVRva60Ko-unsplash-min.jpg" alt="изображение">
-                    <div class='card__description-position'>
-                        <h3 class='card__name'>Домбай</h3>
-                        <button class='card__like-button' type='button'>
-                            <img src="./images/like.svg" alt="изображение">
-                        </button>
-                    </div> 
-                </li>
-                <li class='card'>
-                    <img class='card__img' src="./images/photo/mehmet-turgut-kirkgoz-Sv2JiMC85Gk-unsplash-min.jpg" alt="изображение">
-                    <div class='card__description-position'>
-                        <h3 class='card__name'>Гора Эльбрус</h3>
-                        <button class='card__like-button' type='button'>
-                            <img src="./images/like.svg" alt="изображение">
-                        </button>
-                    </div> 
-                </li>
-                <li class='card'>
-                    <img class='card__img' src="./images/photo/francesco-ungaro-3_bh5eRJchk-unsplash-min.jpg" alt="изображение">
-                    <div class='card__description-position'>
-                        <h3 class='card__name'>Домбай</h3>
-                        <button class='card__like-button' type='button'>
-                            <img src="./images/like.svg" alt="изображение">
-                        </button>
-                    </div> 
-                </li>
-                <li class='card'>
-                    <img class='card__img' src="./images/photo/brandon-usmany-olvimDObfGY-unsplash-min.jpg" alt="изображение">
-                    <div class='card__description-position'>
-                        <h3 class='card__name'>Карачаево-Черкесия</h3>
-                        <button class='card__like-button' type='button'>
-                            <img src="./images/like.svg" alt="изображение">
-                        </button>
-                    </div> 
-                </li>
-            </ul>
+            <ul class='places'></ul>
         </main>
         <footer class='footer'>
             <p class='footer__author'>&copy;2020 Mesto Russia</p>
         </footer>
-        <section class='edit'>
-            <div class='edit__popup'>
-                <button class='edit__button edit__button_type_close' type='button'>
-                    <img class='edit__close-button' src="./images/Close-Icon.svg" alt='изображение'>
+        <section class='popup popup__edit'>
+            <div class='popup__container'>
+                <button class='popup__button popup__button_type_close' type='button'>
+                    <img class='popup__close-button' src="./images/Close-Icon.svg" alt='изображение'>
                     </button>
-                    <h2 class='edit__title'>Редактировать профиль</h2>
-                    <form name='form-edit' class='edit__form'>
-                        <input class='edit__input edit__input_text_name' type="text" placeholder='Имя' required value=''>
-                        <input class='edit__input edit__input_text_description' type="text"  placeholder="О себе" required value=''>
-                        <button class='button edit__save-button' type="submit">Сохранить</button>
+                    <h2 class='popup__title'>Редактировать профиль</h2>
+                    <form name='form-edit' class='popup__form'>
+                        <input class='popup__input popup__input_text_name' type="text" placeholder='Имя' required value=''>
+                        <input class='popup__input popup__input_text_description' type="text"  placeholder="О себе" required value=''>
+                        <button class='button popup__save-button' type="submit">Сохранить</button>
                     </form>
             </div>
         </section>
+        <section class='popup popup__add'>
+            <div class='popup__container'>
+                <button class='popup__button popup__button_type_close' type='button'>
+                    <img class='popup__close-button' src="./images/Close-Icon.svg" alt='изображение'>
+                </button>
+                <h2 class='popup__title'>Новое место</h2>
+                <form name='form-edit' class='popup__form'>
+                    <input class='popup__input popup__input_card_name' type="text" placeholder='Название' required value=''>
+                    <input class='popup__input popup__input_card_description' type="text"  placeholder="Ссылка на картинку" required value=''>
+                    <button class='button popup__save-button' type="submit">Сохранить</button>
+                </form>
+            </div>
+        </section>
     </div>
+    <section class='img'>
+        <div class="img__position">
+            <button class='popup__button popup__button_type_close' type='button'>
+                <img class='img__close-button' src="./images/Close-Icon.svg" alt='изображение'>
+            </button>
+            <img class='img__full-size' src=''alt='изображение'>
+            <p class='img__text'></p>
+        </div>
+    </section>
+    <template class="card_template">
+        <li class='card'>
+            <a href='#' class='img__open'><img class='card__img' src='' alt="изображение"></a>
+            <button class='button card__remove-button' type='button'>
+                <img src="./images/Trash.svg" alt='изображение'>
+            </button>
+            <div class='card__description-position'>
+                <h3 class='card__name'></h3>
+                <button class='card__like-button' type='button'>
+                </button>
+            </div> 
+        </li>
+    </template>
     <script src="./scripts/script.js"></script>
 </body>
 </html>

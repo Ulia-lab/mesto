@@ -7,7 +7,9 @@
     align-self: center;
     justify-self: center;
     height: 18.13px;
-    transition: 0.5s linear;
+    width: 23px;
+    transition: 0.005s linear;
+    background: url("../../../images/like.svg") no-repeat;
 }
 
 .card__like-button:hover {

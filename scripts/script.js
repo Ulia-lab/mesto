@@ -1,23 +1,23 @@
-let page = document.querySelector('.page');
-let popup = page.querySelector('.popup');
+const page = document.querySelector('.page');
+const popup = page.querySelector('.popup');
 
 //edit button
-let editButton = page.querySelector('.profile__button_type_edit');
-let editPopup = page.querySelector('.popup__edit');
+const editButton = page.querySelector('.profile__button_type_edit');
+const editPopup = page.querySelector('.popup__edit');
 
 //add button
-let addButton = page.querySelector('.profile__button_type_add');
-let addPopup = page.querySelector('.popup__add');
+const addButton = page.querySelector('.profile__button_type_add');
+const addPopup = page.querySelector('.popup__add');
 
 //close button
-let closeButton = page.querySelectorAll('.popup__close-button');
+const closeButton = page.querySelectorAll('.popup__close-button');
 
 //form elements
-let formElement = document.querySelectorAll('.popup__form');
-let nameProfile = page.querySelector('.profile__name');
-let descriptionProfile = page.querySelector('.profile__description');
-let inputName = page.querySelector('.popup__input_text_name');
-let inputDescription = page.querySelector('.popup__input_text_description');
+const formElement = document.querySelectorAll('.popup__form');
+const nameProfile = page.querySelector('.profile__name');
+const descriptionProfile = page.querySelector('.profile__description');
+const inputName = page.querySelector('.popup__input_text_name');
+const inputDescription = page.querySelector('.popup__input_text_description');
 
 //adding card
 const cardTemplate = document.querySelector(".card_template").content;

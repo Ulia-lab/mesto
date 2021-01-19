@@ -1,8 +1,9 @@
 .img__full-size {
-    height: 540px;
+    max-height: 74vh;
     max-width: 75vw;
     margin: auto;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    overflow: hidden;
 }

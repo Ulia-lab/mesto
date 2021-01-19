@@ -8,11 +8,10 @@
     justify-self: center;
     height: 18.13px;
     width: 23px;
-    transition: 0.1s linear;
+    transition: 0.005s linear;
     background: url("../../../images/like.svg") no-repeat;
 }
 
 .card__like-button:hover {
     opacity: 0.5;
-    transition: 0.5s linear;
 } 

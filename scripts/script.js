@@ -56,7 +56,7 @@ const initialCards = [
     }
   ];
 
-//cards
+//create card from any object
 function renderCard (element) {
   const newCard = cardTemplate.cloneNode(true);
 
@@ -67,6 +67,7 @@ function renderCard (element) {
   cardPlace.prepend(newCard);
 }
 
+// add new cards
 function handleAddCards(element) {
   element.preventDefault();
   const newForm = new Object();
@@ -84,6 +85,7 @@ function resetInputValue () {
   inputCardDescription.value = "";
 }
 
+// card listeners
 function setListeners(element) {
   element.querySelector('.card__remove-button').addEventListener('click', handleRemove);
   element.querySelector('.img__open').addEventListener('click', openImage);
@@ -95,7 +97,7 @@ function handleLike(element) {
   element.target.closest('.card__like-button').classList.toggle('card__like-button_active');
 }
 
-// card delete
+// remove card 
 function handleRemove(element) {
   element.target.closest('.card').remove();
 }
@@ -110,7 +112,7 @@ function openImage(element) {
   newImg.classList.add('img_active');
 }
 
-// popup  
+// all about popup  
 function openPopup(element) {
   switch (element.target.className) {
     case 'profile__edit-button':
@@ -124,6 +126,7 @@ function openPopup(element) {
   }
 }
 
+// save popup-edit info
 function handleFormSubmit (element) {
     element.preventDefault();
     nameProfile.textContent = inputName.value;
@@ -131,7 +134,7 @@ function handleFormSubmit (element) {
     popup.classList.remove('popup_active'); 
 }
 
-// close
+// close popup
 function closePopup() {
     editPopup.classList.remove('popup_active');
     addPopup.classList.remove('popup_active');
@@ -150,5 +153,6 @@ closeButton[1].addEventListener('click', closePopup);
 document.querySelector('.img__close-button').addEventListener('click', function () {newImg.classList.remove('img_active')
 });
 
+// rendering default cards from massive
 initialCards.forEach(renderCard);
 

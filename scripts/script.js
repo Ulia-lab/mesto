@@ -61,6 +61,7 @@ function renderCard (element) {
   const newCard = cardTemplate.cloneNode(true);
 
   newCard.querySelector('.card__img').src = element.link;
+  newCard.querySelector('.card__img').alt = 'изображение';
   newCard.querySelector('.card__name').innerText = element.name;
 
   setListeners(newCard);
@@ -70,19 +71,14 @@ function renderCard (element) {
 // add new cards
 function handleAddCards(element) {
   element.preventDefault();
-  const newForm = new Object();
-
-  newForm.name = inputCardName.value;
-  newForm.link= inputCardDescription.value;
+  const newForm = {
+    name: inputCardName.value,
+    link: inputCardDescription.value
+  }
   
   renderCard (newForm);
-  resetInputValue();
   closePopup();
-}
-
-function resetInputValue () {
-  inputCardName.value = "";
-  inputCardDescription.value = "";
+  element.target.closest(".popup__form").reset();
 }
 
 // card listeners
@@ -107,6 +103,7 @@ function openImage(element) {
   const closeCard = element.target.closest('.card');
 
   newImg.querySelector('.img__full-size').src = closeCard.querySelector('.card__img').src;
+  newImg.querySelector('.img__full-size').alt = closeCard.querySelector('.card__img').alt;
   newImg.querySelector('.img__text').textContent = closeCard.querySelector('.card__name').textContent;
 
   newImg.classList.add('img_active');

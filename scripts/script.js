@@ -126,30 +126,33 @@ function openPopup(element) {
 
 // save popup-edit info
 function handleFormSubmit (element) {
-    element.preventDefault();
-    nameProfile.textContent = inputName.value;
-    descriptionProfile.textContent = inputDescription.value;
-    popup.classList.remove('popup_active'); 
+  element.preventDefault();
+  nameProfile.textContent = inputName.value;
+  descriptionProfile.textContent = inputDescription.value;
+  closePopup(); 
 }
 
 // close popup
 function closePopup() {
-    editPopup.classList.remove('popup_active');
-    addPopup.classList.remove('popup_active');
+  editPopup.classList.remove('popup_active');
+  addPopup.classList.remove('popup_active');
+  newImg.classList.remove('popup_active')
 }
 
-//listeners
+// listeners open popup
 editButton.addEventListener('click', openPopup);
 addButton.addEventListener('click', openPopup);
 
-formElement[0].addEventListener('submit', handleFormSubmit); 
-formElement[1].addEventListener('submit', handleAddCards);  
+// listeners save button
+document.querySelector('.popup__form-edit').addEventListener('submit', handleFormSubmit); 
+document.querySelector('.popup__form-add').addEventListener('submit', handleAddCards);  
 
-closeButton[0].addEventListener('click', closePopup); 
-closeButton[1].addEventListener('click', closePopup);
+// listeners close popup
+document.querySelector('.popup__close-button-edit').addEventListener('click', closePopup); 
 
-document.querySelector('.img__close-button').addEventListener('click', function () {newImg.classList.remove('popup_active')
-});
+document.querySelector('.popup__close-button-add').addEventListener('click', closePopup);
+
+document.querySelector('.popup__close-button-img').addEventListener('click', closePopup);
 
 // rendering default cards from massive
 initialCards.forEach(renderCard);

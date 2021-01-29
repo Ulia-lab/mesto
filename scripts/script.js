@@ -98,9 +98,9 @@ function handleRemove(element) {
 function openImage(element) {
   const closeCard = element.target.closest('.card');
 
-  newImg.querySelector('.img__full-size').src = closeCard.querySelector('.card__img').src;
-  newImg.querySelector('.img__full-size').alt = closeCard.querySelector('.card__img').alt;
-  newImg.querySelector('.img__text').textContent = closeCard.querySelector('.card__name').textContent;
+  newImg.querySelector('.popup__full-size').src = closeCard.querySelector('.card__img').src;
+  newImg.querySelector('.popup__full-size').alt = closeCard.querySelector('.card__img').alt;
+  newImg.querySelector('.popup__text').textContent = closeCard.querySelector('.card__name').textContent;
 
   newImg.classList.add('popup_active');
 }

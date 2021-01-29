@@ -1,5 +1,4 @@
 const page = document.querySelector('.page');
-const popup = page.querySelector('.popup');
 
 //edit button
 const editButton = page.querySelector('.profile__button_type_edit');
@@ -9,11 +8,7 @@ const editPopup = page.querySelector('.popup_type_edit');
 const addButton = page.querySelector('.profile__button_type_add');
 const addPopup = page.querySelector('.popup_type_add');
 
-//close button
-const closeButton = page.querySelectorAll('.popup__close-button');
-
 //form elements
-const formElement = document.querySelectorAll('.popup__form');
 const nameProfile = page.querySelector('.profile__name');
 const descriptionProfile = page.querySelector('.profile__description');
 const inputName = page.querySelector('.popup__input_text_name');

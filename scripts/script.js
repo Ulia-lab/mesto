@@ -75,7 +75,8 @@ function handleAddCards(element) {
     name: inputCardName.value,
     link: inputCardDescription.value
   }
-  
+
+  initialCards.push(newForm);
   renderCard (newForm);
   closePopup();
   element.target.closest(".popup__form").reset();
@@ -107,21 +108,6 @@ function openImage(element) {
   newImg.querySelector('.img__text').textContent = closeCard.querySelector('.card__name').textContent;
 
   newImg.classList.add('popup_active');
-  console.log(newImg.classList);
-}
-
-// all about popup  
-function openPopup(element) {
-  switch (element.target.className) {
-    case 'profile__edit-button':
-      inputName.value = nameProfile.textContent;
-      inputDescription.value = descriptionProfile.textContent;
-      editPopup.classList.add('popup_active');
-      break;
-    case 'profile__add-button':
-      addPopup.classList.add('popup_active');
-      break;
-  }
 }
 
 // save popup-edit info
@@ -140,8 +126,15 @@ function closePopup() {
 }
 
 // listeners open popup
-editButton.addEventListener('click', openPopup);
-addButton.addEventListener('click', openPopup);
+editButton.addEventListener('click', function () { 
+  inputName.value = nameProfile.textContent;
+  inputDescription.value = descriptionProfile.textContent;
+  editPopup.classList.add('popup_active');
+ });
+
+addButton.addEventListener('click', function () { 
+  addPopup.classList.add('popup_active');
+ });
 
 // listeners save button
 document.querySelector('.popup__form-edit').addEventListener('submit', handleFormSubmit); 

@@ -27,7 +27,7 @@ const inputCardDescription = page.querySelector('.popup__input_card_description'
 const cardRemove = document.querySelectorAll('.card__remove-button');
 
 //open img
-const newImg = document.querySelector('.img');
+const newImg = document.querySelector('.popup__img');
 
 const initialCards = [
     {
@@ -106,7 +106,8 @@ function openImage(element) {
   newImg.querySelector('.img__full-size').alt = closeCard.querySelector('.card__img').alt;
   newImg.querySelector('.img__text').textContent = closeCard.querySelector('.card__name').textContent;
 
-  newImg.classList.add('img_active');
+  newImg.classList.add('popup_active');
+  console.log(newImg.classList);
 }
 
 // all about popup  
@@ -147,7 +148,7 @@ formElement[1].addEventListener('submit', handleAddCards);
 closeButton[0].addEventListener('click', closePopup); 
 closeButton[1].addEventListener('click', closePopup);
 
-document.querySelector('.img__close-button').addEventListener('click', function () {newImg.classList.remove('img_active')
+document.querySelector('.img__close-button').addEventListener('click', function () {newImg.classList.remove('popup_active')
 });
 
 // rendering default cards from massive

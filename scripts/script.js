@@ -22,7 +22,7 @@ const inputCardDescription = page.querySelector('.popup__input_card_description'
 const cardRemove = document.querySelectorAll('.card__remove-button');
 
 //open img
-const newImg = document.querySelector('.popup__img');
+const newImg = document.querySelector('.popup-img');
 
 const initialCards = [
     {

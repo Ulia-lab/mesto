@@ -52,26 +52,32 @@ const initialCards = [
   ];
 
 //create card from any object
-function renderCard (element) {
+function createCard (element) {
   const newCard = cardTemplate.cloneNode(true);
   const newCardImg = newCard.querySelector('.card__img');
+  const newCardName = newCard.querySelector('.card__name');
   newCardImg.src = element.link;
   newCardImg.alt = 'изображение';
-  newCard.querySelector('.card__name').innerText = element.name;
+  newCardName.innerText = element.name;
 
   setListeners(newCard);
-  cardPlace.prepend(newCard);
+  return newCard;
+}
+
+// common function for add new card in card place
+function addCard (container, newCard) {
+  container.prepend(newCard);
 }
 
 // add new cards
 function handleAddCards(element) {
   element.preventDefault();
-  const newForm = {
+  let newForm = {
     name: inputCardName.value,
     link: inputCardDescription.value
   }
 
-  renderCard (newForm);
+  addCard(cardPlace, createCard(newForm));
   element.target.closest(".popup__form").reset();
 }
 
@@ -83,7 +89,7 @@ function setListeners(element) {
     openImage(element); 
     openPopup(newImg)
   });
-  
+
   element.querySelector('.card__like-button').addEventListener('click', handleLike);
 }
 
@@ -155,5 +161,6 @@ document.querySelector('.popup__close-button-add').addEventListener('click', () 
 document.querySelector('.popup__close-button-img').addEventListener('click', () => closePopup(newImg));
 
 // rendering default cards from massive
-initialCards.forEach(renderCard);
-
+initialCards.forEach(function (element) {
+  addCard(cardPlace, createCard(element));
+ });

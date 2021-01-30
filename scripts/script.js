@@ -115,10 +115,8 @@ function handleFormSubmit (element) {
 }
 
 // close popup
-function closePopup() {
-  editPopup.classList.remove('popup_active');
-  addPopup.classList.remove('popup_active');
-  newImg.classList.remove('popup_active')
+function closePopup(element) {
+  element.classList.remove('popup_active')
 }
 
 // listeners open popup
@@ -137,11 +135,11 @@ document.querySelector('.popup__form-edit').addEventListener('submit', handleFor
 document.querySelector('.popup__form-add').addEventListener('submit', handleAddCards);  
 
 // listeners close popup
-document.querySelector('.popup__close-button-edit').addEventListener('click', closePopup); 
+document.querySelector('.popup__close-button-edit').addEventListener('click', () => closePopup(editPopup)); 
 
-document.querySelector('.popup__close-button-add').addEventListener('click', closePopup);
+document.querySelector('.popup__close-button-add').addEventListener('click', () => closePopup(addPopup));
 
-document.querySelector('.popup__close-button-img').addEventListener('click', closePopup);
+document.querySelector('.popup__close-button-img').addEventListener('click', () => closePopup(newImg));
 
 // rendering default cards from massive
 initialCards.forEach(renderCard);

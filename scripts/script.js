@@ -54,9 +54,9 @@ const initialCards = [
 //create card from any object
 function renderCard (element) {
   const newCard = cardTemplate.cloneNode(true);
-
-  newCard.querySelector('.card__img').src = element.link;
-  newCard.querySelector('.card__img').alt = 'изображение';
+  const cardImg = newCard.querySelector('.card__img');
+  cardImg.src = element.link;
+  cardImg.alt = 'изображение';
   newCard.querySelector('.card__name').innerText = element.name;
 
   setListeners(newCard);

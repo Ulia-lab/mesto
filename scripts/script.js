@@ -78,7 +78,12 @@ function handleAddCards(element) {
 // card listeners
 function setListeners(element) {
   element.querySelector('.card__remove-button').addEventListener('click', handleRemove);
-  element.querySelector('.img__open').addEventListener('click', openImage);
+
+  element.querySelector('.img__open').addEventListener('click', function (element) {
+    openImage(element); 
+    openPopup(newImg)
+  });
+  
   element.querySelector('.card__like-button').addEventListener('click', handleLike);
 }
 
@@ -101,8 +106,6 @@ function openImage(element) {
   popupFullSize.src = cardImg.src;
   popupFullSize.alt = cardImg.alt;
   newImg.querySelector('.popup__text').textContent = closeCard.querySelector('.card__name').textContent;
-
-  newImg.classList.add('popup_active');
 }
 
 // save popup-edit info
@@ -110,6 +113,11 @@ function handleFormSubmit (element) {
   element.preventDefault();
   nameProfile.textContent = inputName.value;
   descriptionProfile.textContent = inputDescription.value;
+}
+
+// open popup
+function openPopup(element) {
+  element.classList.add('popup_active')
 }
 
 // close popup
@@ -121,11 +129,11 @@ function closePopup(element) {
 editButton.addEventListener('click', function () { 
   inputName.value = nameProfile.textContent;
   inputDescription.value = descriptionProfile.textContent;
-  editPopup.classList.add('popup_active');
+  openPopup(editPopup);
  });
 
 addButton.addEventListener('click', function () { 
-  addPopup.classList.add('popup_active');
+  openPopup(addPopup);
  });
 
 // listeners save button

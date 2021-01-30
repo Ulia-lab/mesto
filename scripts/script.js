@@ -54,9 +54,9 @@ const initialCards = [
 //create card from any object
 function renderCard (element) {
   const newCard = cardTemplate.cloneNode(true);
-  const cardImg = newCard.querySelector('.card__img');
-  cardImg.src = element.link;
-  cardImg.alt = 'изображение';
+  const newCardImg = newCard.querySelector('.card__img');
+  newCardImg.src = element.link;
+  newCardImg.alt = 'изображение';
   newCard.querySelector('.card__name').innerText = element.name;
 
   setListeners(newCard);
@@ -71,7 +71,6 @@ function handleAddCards(element) {
     link: inputCardDescription.value
   }
 
-  initialCards.push(newForm);
   renderCard (newForm);
   closePopup();
   element.target.closest(".popup__form").reset();
@@ -97,9 +96,11 @@ function handleRemove(element) {
 //open image
 function openImage(element) {
   const closeCard = element.target.closest('.card');
+  const popupFullSize = newImg.querySelector('.popup__full-size');
+  const cardImg = closeCard.querySelector('.card__img');
 
-  newImg.querySelector('.popup__full-size').src = closeCard.querySelector('.card__img').src;
-  newImg.querySelector('.popup__full-size').alt = closeCard.querySelector('.card__img').alt;
+  popupFullSize.src = cardImg.src;
+  popupFullSize.alt = cardImg.alt;
   newImg.querySelector('.popup__text').textContent = closeCard.querySelector('.card__name').textContent;
 
   newImg.classList.add('popup_active');

@@ -72,7 +72,6 @@ function handleAddCards(element) {
   }
 
   renderCard (newForm);
-  closePopup();
   element.target.closest(".popup__form").reset();
 }
 
@@ -111,7 +110,6 @@ function handleFormSubmit (element) {
   element.preventDefault();
   nameProfile.textContent = inputName.value;
   descriptionProfile.textContent = inputDescription.value;
-  closePopup(); 
 }
 
 // close popup
@@ -131,8 +129,15 @@ addButton.addEventListener('click', function () {
  });
 
 // listeners save button
-document.querySelector('.popup__form-edit').addEventListener('submit', handleFormSubmit); 
-document.querySelector('.popup__form-add').addEventListener('submit', handleAddCards);  
+document.querySelector('.popup__form-edit').addEventListener('submit', function (element) { 
+  handleFormSubmit(element);
+  closePopup(editPopup);
+}); 
+
+document.querySelector('.popup__form-add').addEventListener('submit', function (element) { 
+  handleAddCards(element);
+  closePopup(addPopup);
+});  
 
 // listeners close popup
 document.querySelector('.popup__close-button-edit').addEventListener('click', () => closePopup(editPopup)); 

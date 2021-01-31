@@ -72,7 +72,7 @@ function addCard (container, newCard) {
 // add new cards
 function handleAddCards(element) {
   element.preventDefault();
-  let newForm = {
+  const newForm = {
     name: inputCardName.value,
     link: inputCardDescription.value
   }

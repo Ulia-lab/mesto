@@ -44,6 +44,7 @@
 @import url(../blocks/popup/__full-size/popup__full-size.css);
 @import url(../blocks/card/__description-position/card__description-position.css);
 @import url(../blocks/popup/__input-error/popup__input-error.css);
+@import url(../blocks/popup/__overlay/popup__overlay.css);
 
 
 

@@ -33,13 +33,15 @@
             <div class='popup__container'>
                 <button class='popup__button' type='button'>
                     <img class='popup__close-button popup__close-button-edit' src="./images/Close-Icon.svg" alt='изображение'>
-                    </button>
-                    <h2 class='popup__title'>Редактировать профиль</h2>
-                    <form name='form-edit' class='popup__form popup__form-edit'>
-                        <input class='popup__input popup__input_text_name' type="text" placeholder='Имя' required value=''>
-                        <input class='popup__input popup__input_text_description' type="text"  placeholder="О себе" required value=''>
-                        <button class='button popup__save-button' type="submit">Сохранить</button>
-                    </form>
+                </button>
+                <h2 class='popup__title'>Редактировать профиль</h2>
+                <form novalidate name='formEdit' class='popup__form popup__form-edit'>
+                    <input id="name-input" name='nameEdit' minlength="2" maxlength="40" class='popup__input popup__input_text_name' type="text" placeholder='Имя' required value=''>
+                    <span class="error name-input-error" ></span>
+                    <input id="description-input" name='description-input' minlength="2" maxlength="200" class='popup__input popup__input_text_description' type="text"  placeholder="О себе" required value=''>
+                    <span class="error description-input-error" ></span>
+                    <button class='button popup__save-button' type="submit">Сохранить</button>
+                </form>
             </div>
         </section>
         <section class='popup popup_type_add'>
@@ -48,10 +50,12 @@
                     <img class='popup__close-button popup__close-button-add' src="./images/Close-Icon.svg" alt='изображение'>
                 </button>
                 <h2 class='popup__title'>Новое место</h2>
-                <form name='form-edit' class='popup__form popup__form-add' id='form-add'>
-                    <input class='popup__input popup__input_card_name' type="text" placeholder='Название' required value=''>
-                    <input class='popup__input popup__input_card_description' type="url"  placeholder="Ссылка на картинку" required value=''>
-                    <button class='button popup__save-button' type="submit">Сохранить</button>
+                <form novalidate name='formAdd' class='popup__form popup__form-add' id='formAdd'>
+                    <input id="title-input" name='nameAdd' minlength="2" maxlength="40" class='popup__input popup__input_card_name' type="text" placeholder='Название' required value=''>
+                    <span class="error title-input-error" ></span>
+                    <input id="url-input" name='urlAdd' class='popup__input popup__input_card_description' type="url"  placeholder="Ссылка на картинку" required value=''>
+                    <span class="error url-input-error"></span>
+                    <button disabled class='button popup__save-button popup__save-button_disabled' type="submit">Сохранить</button>
                 </form>
             </div>
         </section>

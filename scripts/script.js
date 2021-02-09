@@ -195,6 +195,23 @@ addOverlay.addEventListener('click', () => {
 
 imgOverlay.addEventListener('click', () => closePopup(newImg));
 
+//close enter
+document.addEventListener('keydown', function (evt) {
+  if (evt.key === 'Escape') {
+    closePopup(editPopup);
+    editPopup.querySelector(".popup__form").reset();
+    hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_name"));
+    hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_description"));
+
+    closePopup(addPopup);
+    addPopup.querySelector(".popup__form").reset();
+    hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_name"));
+    hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_description"));
+
+    closePopup(newImg)
+  }
+});
+
 // rendering default cards from massive
 initialCards.forEach(function (element) {
   addCard(cardPlace, createCard(element));

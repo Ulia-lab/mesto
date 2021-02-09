@@ -124,6 +124,7 @@ function handleFormSubmit (element) {
 // open popup
 function openPopup(element) {
   element.classList.add('popup_active');
+  setEventListeners(element.querySelector('.popup__form'));
 }
 
 // close popup
@@ -238,16 +239,16 @@ const setEventListeners = (formElement) => {
 
 const enableValidation = (formElement) => {
   const formList = Array.from(document.querySelectorAll('.popup__form')); 
-  console.log(formList);
+
   formList.forEach((formElement) => {
     formElement.addEventListener('submit', (evt) => {
     evt.preventDefault();
     });
 
   });
-  formList.forEach((formElement) => { 
-  setEventListeners(formElement);
-  });
+    formList.forEach((formElement) => { 
+    setEventListeners(formElement);
+    });
 };
 
 enableValidation();

@@ -129,11 +129,23 @@ function handleFormSubmit (element) {
 // open popup
 function openPopup(element) {
   element.classList.add('popup_active');
+
+  document.addEventListener('keydown', function (evt) {
+    if (evt.key === 'Escape') {
+      closePopup(element);
+    }
+  });
 }
 
 // close popup
 function closePopup(element) {
   element.classList.remove('popup_active');
+
+  document.removeEventListener('keydown', function (evt) {
+    if (evt.key === 'Escape') {
+      closePopup(element);
+    }
+  });
 }
 
 // listeners open popup
@@ -194,23 +206,6 @@ addOverlay.addEventListener('click', () => {
 });
 
 imgOverlay.addEventListener('click', () => closePopup(newImg));
-
-//close with enter
-document.addEventListener('keydown', function (evt) {
-  if (evt.key === 'Escape') {
-    closePopup(editPopup);
-    editPopup.querySelector(".popup__form").reset();
-    hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_name"));
-    hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_description"));
-
-    closePopup(addPopup);
-    addPopup.querySelector(".popup__form").reset();
-    hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_name"));
-    hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_description"));
-
-    closePopup(newImg)
-  }
-});
 
 // rendering default cards from massive
 initialCards.forEach(function (element) {

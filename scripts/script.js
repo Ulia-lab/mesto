@@ -24,6 +24,11 @@ const cardRemove = document.querySelectorAll('.card__remove-button');
 //open img
 const newImg = document.querySelector('.popup-img');
 
+//overlay
+const editOverlay = page.querySelector('.overlay-edit');
+const addOverlay = page.querySelector('.overlay-add');
+const imgOverlay = document.querySelector('.overlay-img');
+
 const initialCards = [
     {
       name: 'Архыз',
@@ -123,12 +128,12 @@ function handleFormSubmit (element) {
 
 // open popup
 function openPopup(element) {
-  element.classList.add('popup_active')
+  element.classList.add('popup_active');
 }
 
 // close popup
 function closePopup(element) {
-  element.classList.remove('popup_active')
+  element.classList.remove('popup_active');
 }
 
 // listeners open popup
@@ -136,10 +141,12 @@ editButton.addEventListener('click', function () {
   inputName.value = nameProfile.textContent;
   inputDescription.value = descriptionProfile.textContent;
   openPopup(editPopup);
+  setEventListeners(editPopup.querySelector('.popup__form'));
  });
 
 addButton.addEventListener('click', function () { 
   openPopup(addPopup);
+  setEventListeners(addPopup.querySelector('.popup__form'))
  });
 
 // listeners save button
@@ -154,13 +161,59 @@ document.querySelector('.popup__form-add').addEventListener('submit', function (
 });  
 
 // listeners close popup
-document.querySelector('.popup__close-button-edit').addEventListener('click', () => closePopup(editPopup)); 
+document.querySelector('.popup__close-button-edit').addEventListener('click', () => {
+   closePopup(editPopup);
+   editPopup.querySelector(".popup__form").reset();
+   hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_name"));
+   hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_description"));
+}); 
 
-document.querySelector('.popup__close-button-add').addEventListener('click', () => closePopup(addPopup));
+document.querySelector('.popup__close-button-add').addEventListener('click', () => {
+  closePopup(addPopup);
+  addPopup.querySelector(".popup__form").reset();
+  hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_name"));
+  hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_description"));
+});
 
 document.querySelector('.popup__close-button-img').addEventListener('click', () => closePopup(newImg));
+
+
+//close overlay 
+editOverlay.addEventListener('click', () => {
+  closePopup(editPopup);
+  editPopup.querySelector(".popup__form").reset();
+  hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_name"));
+  hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_description"));
+}); 
+
+addOverlay.addEventListener('click', () => {
+  closePopup(addPopup);
+  addPopup.querySelector(".popup__form").reset();
+  hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_name"));
+  hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_description"));
+});
+
+imgOverlay.addEventListener('click', () => closePopup(newImg));
+
+//close enter
+document.addEventListener('keydown', function (evt) {
+  if (evt.key === 'Escape') {
+    closePopup(editPopup);
+    editPopup.querySelector(".popup__form").reset();
+    hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_name"));
+    hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_description"));
+
+    closePopup(addPopup);
+    addPopup.querySelector(".popup__form").reset();
+    hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_name"));
+    hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_description"));
+
+    closePopup(newImg)
+  }
+});
 
 // rendering default cards from massive
 initialCards.forEach(function (element) {
   addCard(cardPlace, createCard(element));
  });
+

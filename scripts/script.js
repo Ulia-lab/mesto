@@ -195,7 +195,7 @@ addOverlay.addEventListener('click', () => {
 
 imgOverlay.addEventListener('click', () => closePopup(newImg));
 
-//close enter
+//close with enter
 document.addEventListener('keydown', function (evt) {
   if (evt.key === 'Escape') {
     closePopup(editPopup);

@@ -152,8 +152,6 @@ function closePopup(element) {
 // listeners open popup
 editButton.addEventListener('click', function () { 
   editPopup.querySelector(".popup__form").reset();
-  hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_name"));
-  hideInputError(editPopup.querySelector(".popup__form"), editPopup.querySelector(".popup__input_text_description"));
 
   inputName.value = nameProfile.textContent;
   inputDescription.value = descriptionProfile.textContent;
@@ -163,9 +161,6 @@ editButton.addEventListener('click', function () {
 
 addButton.addEventListener('click', function () { 
   addPopup.querySelector(".popup__form").reset();
-  hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_name"));
-  hideInputError(addPopup.querySelector(".popup__form"), addPopup.querySelector(".popup__input_card_description"));
-
   openPopup(addPopup);
  });
 

@@ -127,26 +127,26 @@ function handleFormSubmit (evt) {
   descriptionProfile.textContent = inputDescription.value;
 }
 
+// escape
+function closeByEscape(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_active')
+    closePopup(openedPopup);
+  }
+}
+
 // open popup
 function openPopup(element) {
   element.classList.add('popup_active');
 
-  document.addEventListener('keydown', function (evt) {
-    if (evt.key === 'Escape') {
-      closePopup(element);
-    }
-  });
+  document.addEventListener('keydown', closeByEscape);
 }
 
 // close popup
 function closePopup(element) {
   element.classList.remove('popup_active');
 
-  document.removeEventListener('keydown', function (evt) {
-    if (evt.key === 'Escape') {
-      closePopup(element);
-    }
-  });
+  document.removeEventListener('keydown', closeByEscape);
 }
 
 // listeners open popup

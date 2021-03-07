@@ -19,18 +19,9 @@ const editForm = document.querySelector('.popup__form-edit');
 const addForm = document.querySelector('.popup__form-add');
 
 //adding card
-const cardTemplate = document.querySelector(".card_template").content;
 const cardPlace = document.querySelector('.places');
 const inputCardName = page.querySelector('.popup__input_card_name');
 const inputCardDescription = page.querySelector('.popup__input_card_description');
-
-//open img
-const newImg = document.querySelector('.popup-img');
-
-//overlay
-const editOverlay = page.querySelector('.overlay-edit');
-const addOverlay = page.querySelector('.overlay-add');
-const imgOverlay = document.querySelector('.overlay-img');
 
 const initialCards = [
     {
@@ -59,68 +50,27 @@ const initialCards = [
     }
   ];
 
-// //create card from any object
-// function createCard (element) {
-//   const newCard = cardTemplate.cloneNode(true);
-//   const newCardImg = newCard.querySelector('.card__img');
-//   const newCardName = newCard.querySelector('.card__name');
-//   newCardImg.src = element.link;
-//   newCardImg.alt = 'изображение';
-//   newCardName.innerText = element.name;
-
-//   setListeners(newCard);
-//   return newCard;
-// }
-
-// // common function for add new card in card place
-// function addCard (container, newCard) {
-//   container.prepend(newCard);
-// }
+// rendering default cards from massive
+initialCards.forEach(function (item) {
+  const card = new Card(item);
+  const cardElement = card.generateCard();
+  // add in DOM
+  cardPlace.prepend(cardElement);
+});
 
 // add new cards
 function handleAddCards(evt) {
   evt.preventDefault();
-  const newForm = {
-    name: inputCardName.value,
-    link: inputCardDescription.value
-  }
-
-  addCard(cardPlace, createCard(newForm));
+  const cardInfo = {
+      name: inputCardName.value,
+      link: inputCardDescription.value
+    }
+  const newСard = new Card(cardInfo);
+  const cardElement = newСard.generateCard();
+  // add in DOM
+  cardPlace.prepend(cardElement);
   evt.target.closest(".popup__form").reset();
 }
-
-// // card listeners
-// function setListeners(element) {
-//   element.querySelector('.card__remove-button').addEventListener('click', handleRemove);
-
-//   element.querySelector('.img__open').addEventListener('click', function (element) {
-//     openImage(element); 
-//     openPopup(newImg)
-//   });
-
-//   element.querySelector('.card__like-button').addEventListener('click', handleLike);
-// }
-
-// // likes
-// function handleLike(evt) {
-//   evt.target.closest('.card__like-button').classList.toggle('card__like-button_active');
-// }
-
-// // remove card 
-// function handleRemove(evt) {
-//   evt.target.closest('.card').remove();
-// }
-
-// //open image
-// function openImage(evt) {
-//   const closeCard = evt.target.closest('.card');
-//   const popupFullSize = newImg.querySelector('.popup__full-size');
-//   const cardImg = closeCard.querySelector('.card__img');
-
-//   popupFullSize.src = cardImg.src;
-//   popupFullSize.alt = cardImg.alt;
-//   newImg.querySelector('.popup__text').textContent = closeCard.querySelector('.card__name').textContent;
-// }
 
 // save popup-edit info
 function handleFormSubmit (evt) {
@@ -129,24 +79,24 @@ function handleFormSubmit (evt) {
   descriptionProfile.textContent = inputDescription.value;
 }
 
-// // escape
-// function closeByEscape(evt) {
-//   if (evt.key === 'Escape') {
-//     const openedPopup = document.querySelector('.popup_active');
-//     closePopup(openedPopup);
-//   }
-// }
+// escape
+function closeByEscape(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_active');
+    closePopup(openedPopup);
+  }
+}
 
-// // open popup
-// function openPopup(element) {
-//   element.classList.add('popup_active');
-
-//   document.addEventListener('keydown', closeByEscape);
-// }
+// open popup
+function openPopup(element) {
+  element.classList.add('popup_active');
+  document.addEventListener('keydown', closeByEscape);
+}
 
 //  close popup
 function closePopup(element) {
   element.classList.remove('popup_active');
+  document.removeEventListener('keydown', closeByEscape);
 }
 
 // listeners open popup
@@ -191,19 +141,3 @@ const popups = document.querySelectorAll('.popup')
       }
     })
   })
-
-
-// rendering default cards from massive
-// initialCards.forEach(function (element) {
-//   addCard(cardPlace, createCard(element));
-//  });
-
-// rendering default cards from massive
-initialCards.forEach(function (item) {
-  const card = new Card(item);
-  const cardElement = card.generateCard();
-
-  // add in DOM
-  cardPlace.prepend(cardElement);
-
-});

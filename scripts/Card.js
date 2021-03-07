@@ -1,10 +1,7 @@
 const cardTemplate = document.querySelector(".card_template").content;
 const popupCloseButton = document.querySelector('.popup__close-button-img');
-const popupOverlay = document.querySelector('.popup__overlay');
 const popupElement = document.querySelector('.popup-img');
 const popupImage = document.querySelector('.popup__full-size');
-const like = document.querySelector('.card__like-button');
-
 
 export class Card {
     constructor(card) {

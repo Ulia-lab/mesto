@@ -16,7 +16,6 @@ export class Card {
     }
 
     _closeByEscape(evt) {
-        console.log('hi2');
         if (evt.key === 'Escape') {
             const openedPopup = document.querySelector('.popup_active');
             openedPopup.classList.remove('popup_active');        
@@ -32,7 +31,7 @@ export class Card {
         popupElement.querySelector('.popup__text').textContent = cardElement.querySelector('.card__name').textContent;
 
         popupElement.classList.add('popup_active');
-        console.log(this._closeByEscape);
+
         document.addEventListener('keydown', this._closeByEscape);
     }
       

@@ -1,4 +1,5 @@
 import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
 
 const page = document.querySelector('.page');
 
@@ -141,3 +142,24 @@ const popups = document.querySelectorAll('.popup')
       }
     })
   })
+
+  //validation
+  const formList = Array.from(document.querySelectorAll('.popup__form')); 
+
+  formList.forEach((formElement) => {
+    formElement.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    });
+    
+    const Validator = new FormValidator({
+      formSelector: '.popup__form',
+      inputSelector: '.popup__input',
+      submitButtonSelector: '.popup__save-button',
+      inputErrorClass: 'popup__input_type_error',
+      disableSelector: 'popup__save-button_disabled',
+      errorSelector: 'popup__input-error',
+      errorActiveSelector: 'popup__input-error_active',
+    }, formElement);
+
+    Validator.enableValidation();
+  });

@@ -19,6 +19,7 @@ const inputDescription = page.querySelector(".popup__input_text_description");
 const editForm = document.querySelector(".popup__form-edit");
 const addForm = document.querySelector(".popup__form-add");
 
+//popup img
 const popupImage = document.querySelector(".popup__full-size");
 const popupElement = document.querySelector(".popup-img");
 

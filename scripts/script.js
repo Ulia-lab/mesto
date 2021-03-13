@@ -19,6 +19,9 @@ const inputDescription = page.querySelector(".popup__input_text_description");
 const editForm = document.querySelector(".popup__form-edit");
 const addForm = document.querySelector(".popup__form-add");
 
+const popupImage = document.querySelector(".popup__full-size");
+const popupElement = document.querySelector(".popup-img");
+
 //adding card
 const cardPlace = document.querySelector(".places");
 const inputCardName = page.querySelector(".popup__input_card_name");
@@ -92,8 +95,6 @@ function closeByEscape(evt) {
 
 function openImg(evt) {
   const cardElement = evt.target.closest(".card");
-  const popupImage = document.querySelector(".popup__full-size");
-  const popupElement = document.querySelector(".popup-img");
 
   popupImage.src = cardElement.querySelector(".card__img").src;
   popupImage.alt = "изображение";

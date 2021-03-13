@@ -92,7 +92,6 @@ function closeByEscape(evt) {
 
 function openImg(evt) {
   const cardElement = evt.target.closest(".card");
-  console.log(cardElement);
   const popupImage = document.querySelector(".popup__full-size");
   const popupElement = document.querySelector(".popup-img");
 

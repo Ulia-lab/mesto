@@ -16,8 +16,6 @@ export class FormValidator {
     inputElement.classList.add(this._errorSelector);
     errorElement.textContent = errorMessage;
     errorElement.classList.add(this._errorActiveSelector);
-
-
   };
 
   _hideInputError = (inputElement) => {
@@ -52,7 +50,7 @@ export class FormValidator {
     }
   };
 
-  _setEventListeners () {
+  _setEventListeners = () => {
     const inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
     const buttonElement = this._formElement.querySelector(this._submitButtonSelector);
 

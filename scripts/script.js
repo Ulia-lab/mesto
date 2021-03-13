@@ -53,7 +53,7 @@ const initialCards = [
 
 // rendering default cards from massive
 initialCards.forEach(function (item) {
-  const card = new Card(item);
+  const card = new Card(item, openImg);
   const cardElement = card.generateCard();
   // add in DOM
   cardPlace.prepend(cardElement);
@@ -66,7 +66,7 @@ function handleAddCards(evt) {
       name: inputCardName.value,
       link: inputCardDescription.value
     }
-  const newСard = new Card(cardInfo);
+  const newСard = new Card(cardInfo, openImg);
   const cardElement = newСard.generateCard();
   // add in DOM
   cardPlace.prepend(cardElement);
@@ -86,6 +86,20 @@ function closeByEscape(evt) {
     const openedPopup = document.querySelector('.popup_active');
     closePopup(openedPopup);
   }
+}
+
+function openImg(evt) {
+  const cardElement = evt.target.closest('.card');
+  console.log(cardElement);
+  const popupImage = document.querySelector('.popup__full-size');
+  const popupElement = document.querySelector('.popup-img');
+
+  popupImage.src = cardElement.querySelector('.card__img').src;
+  popupImage.alt = 'изображение';
+
+  popupElement.querySelector('.popup__text').textContent = cardElement.querySelector('.card__name').textContent;
+
+  openPopup(popupElement);
 }
 
 // open popup

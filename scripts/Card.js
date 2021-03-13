@@ -5,7 +5,6 @@ export class Card {
     this._link = card.link;
     this._name = card.name;
     this._openImg = openImg;
-    console.log(openImg);
   }
 
   _getTemplate() {
